@@ -1,0 +1,127 @@
+{
+  "project": {
+    "vr": false
+  },
+  "camera": {
+    "metadata": {
+      "version": 4.3,
+      "type": "Object",
+      "generator": "ObjectExporter"
+    },
+    "object": {
+      "uuid": "EEE8D22B-B64A-4EF2-84FF-7719CEC625F6",
+      "type": "PerspectiveCamera",
+      "name": "Camera",
+      "fov": 50,
+      "aspect": 1.6498388829215898,
+      "near": 1,
+      "far": 100000,
+      "matrix": [0.9906374216079712,6.404460989317684e-11,-0.13651928305625916,0,-0.003986436873674393,0.9995735883712769,-0.028927147388458252,0,0.1364610642194748,0.029200540855526924,0.990215003490448,0,105.41349792480469,19.55279541015625,827.6797485351562,1]
+    }
+  },
+  "scene": {
+    "metadata": {
+      "version": 4.3,
+      "type": "Object",
+      "generator": "ObjectExporter"
+    },
+    "geometries": [
+      {
+        "uuid": "3BCA9939-7306-464E-9AD2-9271C2E33DC3",
+        "type": "SphereGeometry",
+        "radius": 75,
+        "widthSegments": 32,
+        "heightSegments": 16,
+        "phiStart": 0,
+        "phiLength": 6.283185307179586,
+        "thetaStart": 0,
+        "thetaLength": 3.141592653589793
+      },
+      {
+        "uuid": "74068E23-86B3-426E-9634-3C3CBB1EC854",
+        "type": "PlaneBufferGeometry ",
+        "width": 200,
+        "height": 200,
+        "widthSegments": 1,
+        "heightSegments": 1
+      }],
+    "materials": [
+      {
+        "uuid": "AC9B2EE5-CFFB-48C1-8C26-939226CBCCE7",
+        "type": "MeshPhongMaterial",
+        "color": 16777215,
+        "emissive": 954294,
+        "specular": 16775057,
+        "shininess": 25,
+        "side": 1
+      },
+      {
+        "uuid": "D29BCC80-034A-4622-B4E4-2729B41EB77D",
+        "type": "MeshLambertMaterial",
+        "color": 14540253,
+        "emissive": 15198183,
+        "transparent": true
+      }],
+    "object": {
+      "uuid": "E348A734-1DBD-402E-8E18-02959C8BA4C1",
+      "type": "Scene",
+      "name": "Scene",
+      "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+      "children": [
+        {
+          "uuid": "D2FF7C8D-B745-49C6-9890-42064706E4BD",
+          "type": "Group",
+          "name": "lights",
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "children": [
+            {
+              "uuid": "AD77E194-6BAF-4AD6-B987-80FC1FE2B15B",
+              "type": "DirectionalLight",
+              "name": "SkyLight",
+              "color": 6024191,
+              "intensity": 0.4,
+              "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,-632.0900268554688,-110.01000213623047,1]
+            },
+            {
+              "uuid": "E73A753D-0415-467C-9189-326F6E44CBC8",
+              "type": "DirectionalLight",
+              "name": "SunFlairLight",
+              "color": 16120198,
+              "intensity": 0.18,
+              "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,-265.4700012207031,508.6199951171875,1]
+            }]
+        },
+        {
+          "uuid": "FB581A62-521C-43DF-8E8D-C195416B9332",
+          "type": "Group",
+          "name": "Scenery",
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "children": [
+            {
+              "uuid": "904AE505-1850-4B7A-877D-FB3A26FCF4F2",
+              "type": "Mesh",
+              "name": "Sky",
+              "geometry": "3BCA9939-7306-464E-9AD2-9271C2E33DC3",
+              "material": "AC9B2EE5-CFFB-48C1-8C26-939226CBCCE7",
+              "matrix": [500,0,0,0,0,500,0,0,0,0,500,0,0,0,0,1]
+            }]
+        },
+        {
+          "uuid": "749A96A9-8403-4656-B9C0-5A4FA92756B4",
+          "type": "Group",
+          "name": "Ground",
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "children": [
+            {
+              "uuid": "22842AAE-AFF9-4DCA-A4B4-BCE87CB0C507",
+              "type": "Mesh",
+              "name": "GroundPlane",
+              "geometry": "74068E23-86B3-426E-9634-3C3CBB1EC854",
+              "material": "D29BCC80-034A-4622-B4E4-2729B41EB77D",
+              "matrix": [500,0,0,0,0,0.398163378238678,-499.9998474121094,0,0,499.9998474121094,0.398163378238678,0,0,0,0,1]
+            }]
+        }]
+    }
+  },
+  "scripts": {}
+}
