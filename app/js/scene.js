@@ -1,5 +1,5 @@
 ///<reference path="typings/threejs/three.d.ts"/>
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -13,8 +13,9 @@ define(["require", "exports", "vendor/three"], function (require, exports) {
         function Scene() {
             _super.apply(this, arguments);
         }
-        Scene.prototype.update = function (events, delta) {
-        };
+        Scene.prototype.update = function (events, delta) { };
+        Scene.prototype.keyup = function (events, delta) { };
+        Scene.prototype.keydown = function (events, delta) { };
         return Scene;
     })(THREE.Scene);
     exports.Scene = Scene;

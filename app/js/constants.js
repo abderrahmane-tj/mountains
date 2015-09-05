@@ -8,6 +8,7 @@ define(["require", "exports"], function (require, exports) {
         KeyCodes[KeyCodes["DOWN"] = 40] = "DOWN";
         KeyCodes[KeyCodes["LEFT"] = 37] = "LEFT";
         KeyCodes[KeyCodes["Right"] = 39] = "Right";
+        KeyCodes[KeyCodes["SPACE"] = 32] = "SPACE";
     })(exports.KeyCodes || (exports.KeyCodes = {}));
     var KeyCodes = exports.KeyCodes;
     ;

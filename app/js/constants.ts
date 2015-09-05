@@ -7,5 +7,7 @@ export enum KeyCodes {
     UP = 38,
     DOWN = 40,
     LEFT = 37,
-    Right = 39
+    Right = 39,
+
+    SPACE = 32
 };

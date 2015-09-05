@@ -3,14 +3,17 @@ import 'vendor/three'
 import {Scene} from 'scene'
 import {EventManager} from 'event-manager'
 import {KeyCodes} from 'constants'
+import {Game} from 'game'
 
 export class Mountain extends Scene {
     name:string;
     camera:THREE.PerspectiveCamera;
     model:THREE.Mesh;
     light:THREE.DirectionalLight;
-    constructor(){
+    game:Game;
+    constructor(game:Game){
         super();
+        this.game = game;
         this.name = "mountains";
         this.camera = new THREE.PerspectiveCamera(
                 75, window.innerWidth / window.innerHeight, 0.1, 10000);
@@ -85,20 +88,10 @@ export class Mountain extends Scene {
         }
     }
 
-    keyUp(e:KeyboardEvent, delta){
-        let k = {left:65,right:68,up:87,down:83};
-        let speed = 10;
-        if(e.keyCode === k.up){
-            this.camera.position.z -= speed;
-        }
-        if(e.keyCode === k.down){
-            this.camera.position.z += speed;
-        }
-        if(e.keyCode === k.left){
-            this.camera.position.x -= speed;
-        }
-        if(e.keyCode === k.right){
-            this.camera.position.x += speed;
+    keyup(eventManager:EventManager, delta){
+        let event = eventManager.event;
+        if(event.keyCode === KeyCodes.SPACE){
+            this.game.scenes.setCurrentScene('plains');
         }
     }
 }

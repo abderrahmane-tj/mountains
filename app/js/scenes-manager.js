@@ -1,6 +1,7 @@
 define(["require", "exports", 'vendor/three'], function (require, exports) {
     var ScenesManager = (function () {
-        function ScenesManager() {
+        function ScenesManager(game) {
+            this.game = game;
             this.scenes = {};
         }
         ScenesManager.prototype.add = function (name, scene) {

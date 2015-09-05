@@ -1,4 +1,4 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -7,8 +7,9 @@ var __extends = this.__extends || function (d, b) {
 define(["require", "exports", 'scene', 'constants', 'vendor/three'], function (require, exports, scene_1, constants_1) {
     var Mountain = (function (_super) {
         __extends(Mountain, _super);
-        function Mountain() {
+        function Mountain(game) {
             _super.call(this);
+            this.game = game;
             this.name = "mountains";
             this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
             var skyGeometry = new THREE.SphereGeometry(75, 32, 16, 0, 6.28, 0, Math.PI);
@@ -72,20 +73,10 @@ define(["require", "exports", 'scene', 'constants', 'vendor/three'], function (r
                 this.camera.position.x -= tSpeed * delta;
             }
         };
-        Mountain.prototype.keyUp = function (e, delta) {
-            var k = { left: 65, right: 68, up: 87, down: 83 };
-            var speed = 10;
-            if (e.keyCode === k.up) {
-                this.camera.position.z -= speed;
-            }
-            if (e.keyCode === k.down) {
-                this.camera.position.z += speed;
-            }
-            if (e.keyCode === k.left) {
-                this.camera.position.x -= speed;
-            }
-            if (e.keyCode === k.right) {
-                this.camera.position.x += speed;
+        Mountain.prototype.keyup = function (eventManager, delta) {
+            var event = eventManager.event;
+            if (event.keyCode === constants_1.KeyCodes.SPACE) {
+                this.game.scenes.setCurrentScene('plains');
             }
         };
         return Mountain;
